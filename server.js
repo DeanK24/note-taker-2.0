@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/api', routeNotes);
-app.use('/', routesHtml);
+// app.use('/', routesHtml);
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`);

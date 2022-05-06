@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const notes = require('../../Develop/db/db.json');
+const notes = require('../../db/db.json');
 const {v4:uuid} = require('uuid');
 const fs = require('fs');
 const path = require('path');
 
 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-router.get('/api/notes/:id', (req, res) => {
+router.get('/notes/:id', (req, res) => {
     for (let i = 0; i < notes.length; i++) {
         if (notes[i].id === req.params.id) {
             res.json(notes[i]);
@@ -17,7 +17,7 @@ router.get('/api/notes/:id', (req, res) => {
     }
 });
 
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     const createNote = {
         "title": req.body.title,
         "text": req.body.text,
