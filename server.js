@@ -14,6 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/api/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
+});
+
+app.get('/api/notes', (req, res) => {
     res.json(notes);
 });
 
