@@ -13,7 +13,7 @@ app.use(express.static('public'));
 // parse incoming JSON data
 
 app.use('/api', routeNotes);
-app.use('/', routesHtml);
+// app.use('/', routesHtml);
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`);
